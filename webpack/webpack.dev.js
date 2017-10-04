@@ -18,6 +18,20 @@ module.exports = {
         openPage:'',
         watchContentBase: true
     },
+    module:{
+        rules:[
+            {
+                test: /\.(gif|png|jpe?g|svg|ico)$/i,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name:path.join('[hash].[ext]')
+                    }
+                },
+                exclude: /node_modules/
+            },
+        ]
+    },
     plugins:[
         new CleanWebpackPlugin(
             ['compiled'],

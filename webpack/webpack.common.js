@@ -41,7 +41,8 @@ module.exports = {
                     loader:'babel-loader',
                     options:{
                         presets:[
-                            'env'//https://babeljs.io/docs/plugins/preset-env/
+                            'env',//https://babeljs.io/docs/plugins/preset-env/
+                            'stage-3'//https://babeljs.io/docs/plugins/preset-stage-3/
                         ],
                         cacheDirectory:true
                     }

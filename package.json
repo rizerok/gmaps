@@ -1,0 +1,47 @@
+{
+  "name": "gmaps-lib",
+  "version": "0.0.1",
+  "description": "Library for gmaps",
+  "main": "dist/lib.js",
+  "module": "source/lib/lib.js",
+  "scripts": {
+    "build:dev": "webpack --progress --env=dev",
+    "build:lib": "webpack --progress --env=lib",
+    "build:demo": "webpack --progress --env=demo",
+    "build:prod": "webpack --progress --env=prod",
+    "watch:dev": "webpack-dev-server --env=dev --progress",
+    "watch:demo": "webpack-dev-server --env=demo --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rizerok/gmaps-lib.git"
+  },
+  "author": "alex",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "clean-webpack-plugin": "^0.1.16",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.6.1",
+    "eslint-loader": "^1.9.0",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "html-webpack-harddisk-plugin": "^0.1.0",
+    "html-webpack-plugin": "^2.30.1",
+    "postcss-loader": "^2.0.6",
+    "style-loader": "^0.18.2",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2",
+    "webpack-merge": "^4.1.0"
+  },
+  "browserslist": [
+    "> 3%"
+  ],
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
+  }
+}

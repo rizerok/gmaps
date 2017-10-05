@@ -6,7 +6,7 @@ import 'js-info-bubble';
 
 export default {
     key:'AIzaSyAd1xMYT1bt99qtFWQEzXiRBvORDWHgPtk',
-    libs:['geometry','places'],
+    //libs:['geometry','places'],
 
     icons:{
         main: {

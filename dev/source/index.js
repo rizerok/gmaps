@@ -23,8 +23,7 @@ gmaps.apiLoader(config.key,config.libs)
         ],{
             icon:config.icons.main
         });
-
-
+        
         map.vpOnMarkers();
 
         map.onChangeActiveMarker = (newIdx,oldIdx)=>{

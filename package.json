@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "Library for gmaps",
   "main": "dist/lib.js",
-  "module": "source/lib/lib.js",
   "scripts": {
     "build:dev": "webpack --progress --env=dev",
     "build:lib": "webpack --progress --env=lib",

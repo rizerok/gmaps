@@ -1,8 +1,32 @@
-import {test3} from 'dist/lib';
-import {test4} from 'dist/lib';
-import lib from 'dist/lib';
-import 'dist/lib.css';
+import gmaps from 'dist/lib';
+import './index.styl';
 import './index.styl'
-console.log(test3.title());
-console.log(lib);
-test4.then(mess=>console.log(mess)+1);
+
+import config from './config';
+
+const node = document.getElementById('map');
+
+gmaps.apiLoader(config.key,config.libs)
+    .then(resp=>{
+
+        window.map = new gmaps.Map(node,{
+            center:{
+                lat:40.714,
+                lng:-74.005
+            },
+            zoom: 8
+        },config.infoBubble);
+
+        map.markerAdd([
+            {lat:41.714,lng:-73.005},
+            {lat:40.714,lng:-72.005},
+            {lat:40.714,lng:-74.005}
+        ]);
+
+        map.vpOnMarkers();
+
+        map.onChangeActiveMarker = (newIdx,oldIdx)=>{
+            let marker = map.markerList[newIdx];
+            map.ibOpenOne(marker,'b-map-info-window__shadow','content');
+        };
+    });

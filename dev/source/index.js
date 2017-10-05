@@ -28,6 +28,6 @@ gmaps.apiLoader(config.key,config.libs)
 
         map.onChangeActiveMarker = (newIdx,oldIdx)=>{
             let marker = map.markerList[newIdx];
-            map.ibOpenOne(marker,'b-map-info-window__shadow');
+            map.ibOpenOne(marker,'b-map-info-window__shadow','content');
         };
     });

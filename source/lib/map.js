@@ -1,9 +1,15 @@
+import 'js-info-bubble';
+
 class Map{
     constructor(node,config,ibConfig){
         this.gmaps = window.google.maps;
 
         this.map = new this.gmaps.Map(node,config);
-        this.infoBubble = ibConfig;
+        this.infoBubble = (content) => new InfoBubble({
+            ...ibConfig,
+            map: this.map,
+            content:content
+        });
         
         this.markerList = [];
         this.activeMarker = null;
@@ -79,7 +85,7 @@ class Map{
         }
         if(!isOpen) {
             console.log(marker);
-            marker.infoBubble = this.infoBubble(this.map,html);
+            marker.infoBubble = this.infoBubble(html);
 
             marker.infoBubble.open(this.map, marker);
         }
@@ -98,8 +104,8 @@ class Map{
             container.parentNode.previousSibling.previousSibling.innerHTML = '';
             container.parentNode.innerHTML = '';
         }
-
-        marker.infoBubble = this.infoBubble(this.map,html);
+        
+        marker.infoBubble = this.infoBubble(html);
         marker.infoBubble.open(this.map, marker);
 
         callback && callback(marker);

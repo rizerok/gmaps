@@ -1,6 +1,6 @@
 import marker from './marker1.png';
 import markerActive from './marker1_active.png';
-import 'js-info-bubble';
+
 
 //console.log('InfoBubble',InfoBubble);
 
@@ -23,9 +23,7 @@ export default {
             //anchor:new google.maps.Point(58.5,90)//https://developers.google.com/maps/documentation/javascript/reference#Point
         }
     },
-    infoBubble:(map,content) => new InfoBubble({
-        map: map,
-        content:'content',// tpl.main('Показать ближайшие точки'),
+    infoBubble:{
         shadowStyle: 0,//0-2
         padding: 0,
         backgroundColor: '#fff',
@@ -40,5 +38,5 @@ export default {
         arrowStyle: 0,//0-4
         maxWidth:300,
         minWidth:300
-    })
+    }
 };

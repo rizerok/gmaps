@@ -86,23 +86,43 @@ class Map{
         
         callback && callback();
     }
-    ibOpenOne(marker,className,html, callback) {//TODO HERE!!!!!
+    ibOpenOne(marker,className,html, callback) {
         //открывает только один infoBubble а все остальные из коллекции закрывает
-        var domEl = document.querySelectorAll('.'+className);
+        const domEls = document.querySelectorAll('.'+className);
         for (var i = 0; i < this.markerList.length; i++) {
-            try {
-                var parent = domEl[i].parentNode.parentNode.parentNode;
-                parent.parentNode.removeChild(parent);
-                this.markerList[i].infoBubble.close(this.map, this.markerList[i]);//закрывает все
-            } catch (e) {}
+            this.markerList[i].infoBubble
+                && this.markerList[i].infoBubble.close(this.map, this.markerList[i]);
+        }
+        if(domEls.length){
+            const container =domEls[0].parentNode.parentNode;
+            container.parentNode.previousSibling.previousSibling.innerHTML = '';
+            container.parentNode.innerHTML = '';
         }
 
-        marker.infoBubble = infoBubble(map,html);
+        marker.infoBubble = this.infoBubble(this.map,html);
         marker.infoBubble.open(this.map, marker);
 
         callback && callback(marker);
     }
+    ibClose(marker,className,callback){
+        const domEl = document.querySelector('.'+className);
 
+        marker.infoBubble.close(this.map, marker);
+
+        const container = domEl.parentNode.parentNode;
+        //container.parentNode.previousSibling.previousSibling.innerHTML = '';
+        container.parentNode.removeChild(container);
+
+        callback && callback(marker);
+    }
+    ibRemoveAllFromDom(){
+        const domEls = document.querySelectorAll('.'+className);
+        if(domEls.length){
+            const container =domEls[0].parentNode.parentNode;
+            container.parentNode.previousSibling.previousSibling.innerHTML = '';
+            container.parentNode.innerHTML = '';
+        }
+    }
 }
 
 

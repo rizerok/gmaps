@@ -11,4 +11,4 @@ const markerImageLoader = (urlList) => {
     
     return Promise
         .all(imgList);
-}
+};

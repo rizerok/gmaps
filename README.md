@@ -1,6 +1,6 @@
-<%= htmlWebpackPlugin.options.info.name +' v'+htmlWebpackPlugin.options.info.version %>
+gmaps-lib v0.0.1
 ===================
-<%= htmlWebpackPlugin.options.info.description %>
+Library for gmaps
 
 Install via npm:
 -------------------

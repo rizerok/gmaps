@@ -1,6 +1,6 @@
 {
   "name": "gmaps-lib",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Library for gmaps",
   "main": "dist/lib.js",
   "scripts": {

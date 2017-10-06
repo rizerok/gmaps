@@ -1,4 +1,4 @@
-gmaps-lib v0.0.1
+gmaps-lib v0.0.2
 ===================
 Library for gmaps
 

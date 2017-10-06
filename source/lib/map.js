@@ -51,7 +51,7 @@ class Map{
             markers.push(marker);
         });
         
-        callback && callback(markers,this.activeMarker);
+        callback && callback(markers,marker);
 
         this.markerList.push(...markers);
         return markers;

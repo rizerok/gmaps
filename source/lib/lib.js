@@ -1,5 +1,3 @@
-import 'babel-polyfill';
-
 import apiLoader from './api-loader';
 import Map from './map';
 

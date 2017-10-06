@@ -22,6 +22,8 @@ gmaps.apiLoader(config.key,config.libs)
             {lat:40.714,lng:-74.005}
         ],{
             icon:config.icons.main
+        },(markers,marker)=>{
+            console.log(markers,marker);
         });
         
         map.vpOnMarkers();

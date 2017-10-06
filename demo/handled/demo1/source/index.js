@@ -1,6 +1,5 @@
 import gmaps from 'dist/lib';
 import './index.styl';
-import './index.styl'
 
 import config from './config';
 
@@ -21,7 +20,7 @@ gmaps.apiLoader(config.key,config.libs)
             {lat:41.714,lng:-73.005},
             {lat:40.714,lng:-72.005},
             {lat:40.714,lng:-74.005}
-        ]);
+        ],null);
 
         map.vpOnMarkers();
 

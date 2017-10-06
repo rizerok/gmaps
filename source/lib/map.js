@@ -49,9 +49,10 @@ class Map{
             });
 
             markers.push(marker);
+
+            callback && callback(marker);
         });
         
-        callback && callback(markers,marker);
 
         this.markerList.push(...markers);
         return markers;
